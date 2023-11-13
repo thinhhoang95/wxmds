@@ -44,3 +44,8 @@ def plot_traj_from_df(dfx, callsign, ax = None):
     lons = df['longitude'].values
     lats = df['latitude'].values
     plot_traj(lons, lats, ax)
+
+def plot_traj_from_np_array(x, ax = None):
+    lats = x[0, :]
+    lons = x[1, :]
+    plot_traj(lons, lats, ax)
