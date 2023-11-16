@@ -17,3 +17,7 @@ Next, the mds notebook computes the MDS for all trajectories in the dataset. It 
 Finally, we perform clustering of MDS representations with Kmeans in the mds_post_processing notebook. We also slice the original 19000x2 matrix of MDS points to smaller arrays, and each one we save to the bystorm folder, with the filename corresponding to the thunderstorm datetime. Likewise, the cluster label is then saved to bystormlabels folder. We compress everything into a new file called mds.tar.gz, and we will need this file for training with the ml/torch_mlp notebook.
 
 We can move the files with move_bystorm_to_ml notebook in the mds folder (this is deprecated, due to the fact that we have use the .tar.gz file in the previous step).
+
+# Training of Storm Shadow
+We propose a Fully Connected Network (FCN) to learn the distribution of cluster use. This is realized in the torch_mlp notebook. The weight is stored as storm_shadow_2.pth file. In that file, we also know how to perform inference.
+
