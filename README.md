@@ -14,6 +14,6 @@ Next, in the batch_preprocess_trajs notebook, we extract the tgz file. Each traj
 
 Next, the mds notebook computes the MDS for all trajectories in the dataset. It outputs two files: mds_catalogue, which indicate the count of MDS points for each thunderstorm datetime. The thunderstorm datetime is then matched to each point through this information later. The second file is mds_pos.npz, which contains a 19000x2 matrix of MDS points. The row index corresponds to the thunderstorm datetime via the catalogue, as explained earlier.
 
-Finally, we perform clustering of MDS representations with Kmeans in the mds_post_processing notebook. We also slice the original 19000x2 matrix of MDS points to smaller arrays, and each one we save to the bystorm folder, with the filename corresponding to the thunderstorm datetime. Likewise, the cluster label is then saved to bystormlabels folder.
+Finally, we perform clustering of MDS representations with Kmeans in the mds_post_processing notebook. We also slice the original 19000x2 matrix of MDS points to smaller arrays, and each one we save to the bystorm folder, with the filename corresponding to the thunderstorm datetime. Likewise, the cluster label is then saved to bystormlabels folder. We compress everything into a new file called mds.tar.gz, and we will need this file for training with the ml/torch_mlp notebook.
 
-We can move the files with move_bystorm_to_ml notebook in the mds folder. 
+We can move the files with move_bystorm_to_ml notebook in the mds folder (this is deprecated, due to the fact that we have use the .tar.gz file in the previous step).
